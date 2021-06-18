@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <h2 style="margin-top: 2%; margin-left: 15%;"><strong style="color:#000000 ;font-weight:900;padding: 300px;">List Of Account Holders</strong></h2>
+
+    <form action="/view" method="POST" >
+    <table class="table table text-center" style="
+            border: solid rgb(0, 0, 0) 5px;
+            margin-top: 5%;
+            margin-left: 4%;
+            width: 1300px;
+            height: auto;
+            
+            "
+            >
+          
+        <thead class="table">
+        <tr>
+          <th scope="col">A/c No.</th>
+          <th scope="col">Account Holder</th>
+          <th scope="col">Email Id</th>
+          <th scope="col">Current Balance</th>
+          <th scope="col">Mobile Number</th>
+          <th scope="col">Address</th>
+          <th scope="col">SELECT</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        <tr>
+          <td style="background-color:#ffffff">{{customeridd.account_no}}</td>
+          <td style="background-color:#ffffff">{{customeridd.name}}</td>
+          <td style="background-color:#ffffff">{{customeridd.email}}</td>
+          <td style="background-color:#ffffff">{{customeridd.amount}}</td>
+          <td style="background-color:#ffffff">{{customeridd.mobile_number}} </td>
+          <td style="background-color:#ffffff">{{customeridd.address}} </td>
+          <td style="background-color:#ffffff"><button style="background-color:#5a4d4d54;color:#000000" type="submit" name="submit" class="btn " value="{{customeridd.name}}">Transfer</button></td>
+          {% csrf_token %}
+        </tr>
+      </tbody>
+      
+    </table>
+    </form>
+  
+{% endblock body %}
